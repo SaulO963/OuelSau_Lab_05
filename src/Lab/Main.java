@@ -88,21 +88,39 @@ public class Main {
             }
         }
 
+        System.out.println("\n================= Testing Overfilling teams =================");
+
+        for (int i = 0; i < 3; i++) {
+            try {
+                teamA.insert(dPlayers[i]);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        for (int i = 0; i < 3; i++) {
+            try {
+                teamB.insert(pPlayers[i]);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
         System.out.println("\n================= Testing Contains =================");
         System.out.println("Checking " + teamA.getName());
-        teamA.contains(p1);
-        teamA.contains(p10);
-        teamA.contains(p18);
-        teamA.contains(d1);
-        teamA.contains(d10);
-        teamA.contains(d17);
+        teamA.contains(p1);     //true
+        teamA.contains(p10);    //true
+        teamA.contains(p18);    //true
+        teamA.contains(d1);     //false
+        teamA.contains(d10);    //false
+        teamA.contains(d17);    //false
         System.out.println("Checking " + teamB.getName());
-        teamB.contains(d1);
-        teamB.contains(d10);
-        teamB.contains(d17);
-        teamB.contains(p1);
-        teamB.contains(p10);
-        teamB.contains(p18);
+        teamB.contains(d1);     //true
+        teamB.contains(d10);    //true
+        teamB.contains(d17);    //true
+        teamB.contains(p1);     //false
+        teamB.contains(p10);    //false
+        teamB.contains(p18);    //false
 
         System.out.println("\n================= Printing Teams =================");
 
